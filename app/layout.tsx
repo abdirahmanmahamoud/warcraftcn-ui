@@ -2,7 +2,6 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import SearchDialog from "@/components/search-dialog";
-import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -29,7 +28,6 @@ export default function Layout({ children }: LayoutProps<"/">) {
           >
             <SiteHeader />
             <main className="flex-1">{children}</main>
-            <SiteFooter />
             <Toaster />
           </RootProvider>
         </ThemeProvider>

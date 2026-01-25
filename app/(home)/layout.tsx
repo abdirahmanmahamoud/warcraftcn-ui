@@ -1,3 +1,10 @@
+import { SiteFooter } from "@/components/site-footer";
+
 export default function Layout({ children }: LayoutProps<"/">) {
-  return <div className="container py-6">{children}</div>;
+  return (
+    <div className="flex flex-1 flex-col">
+      <div className="container flex-1 py-6">{children}</div>
+      <SiteFooter />
+    </div>
+  );
 }
