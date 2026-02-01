@@ -55,6 +55,30 @@
           "target": "components/ui/warcraftcn/assets/input-frame.png"
         }
       ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Warcraft Card",
+      "description": "A simple 8-bit card component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/warcraftcn/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/warcraftcn/card.tsx"
+        },
+        {
+          "path": "components/ui/warcraftcn/styles/warcraft.css",
+          "type": "registry:component",
+          "target": "components/ui/warcraftcn/styles/warcraft.css"
+        },
+        {
+          "path": "components/ui/warcraftcn/assets/card-bg.png",
+          "type": "registry:asset",
+          "target": "components/ui/warcraftcn/assets/card-bg.png"
+        }
+      ]
     }
   ]
 }
