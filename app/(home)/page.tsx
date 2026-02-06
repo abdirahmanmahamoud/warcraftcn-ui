@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import LightPillar from "@/components/light-pillar";
 import { Button } from "@/components/ui/warcraftcn/button";
@@ -29,11 +30,17 @@ export default function Home() {
       </div>
       <Card className="relative z-10 hidden md:block">
         <CardHeader className="text-white">
-          <CardTitle className="text-center font-bold text-2xl">
+          <CardTitle className="text-center font-bold text-4xl">
             warcraftcn
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col items-center justify-center gap-2 pt-5">
+          <Image
+            alt="logo"
+            height={300}
+            src="/warcraftcn-logo.png"
+            width={300}
+          />
           <p className="text-white">
             A set of components inspired by classic Warcraft III RTS UI
             aesthetics. Open source, copy paste ready. Works with your favorite
