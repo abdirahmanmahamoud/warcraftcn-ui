@@ -12,9 +12,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-center px-5 py-4 bg-cover bg-no-repeat text-white shadow-lg transition-shadow hover:shadow-xl hover:brightness-110",
+          "bg-center px-5 py-4 bg-cover bg-no-repeat text-white hover:brightness-110",
         frame:
-          "bg-center bg-cover bg-no-repeat text-white shadow-lg transition-shadow hover:shadow-xl hover:brightness-110",
+          "bg-center bg-cover bg-no-repeat text-white hover:brightness-110",
       },
     },
     defaultVariants: {
