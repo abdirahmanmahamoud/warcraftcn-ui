@@ -29,3 +29,239 @@
 .wc-input-bg {
   background-image: url("https://warcraftcn.com/warcraftcn/input-frame.webp");
 }
+
+/* ============================================
+   SKELETON BASE & FACTION VARIANTS
+   ============================================ */
+
+/* Base skeleton - neutral/default */
+.wc-skeleton {
+  background: linear-gradient(
+    135deg,
+    hsl(35 10% 12%) 0%,
+    hsl(35 8% 18%) 50%,
+    hsl(35 10% 14%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 hsl(35 10% 25% / 0.3),
+    inset 0 -1px 0 hsl(35 10% 8% / 0.5),
+    0 2px 8px hsl(0 0% 0% / 0.4);
+}
+
+/* Orc variant - red/brown warrior theme */
+.wc-skeleton-orc {
+  background: linear-gradient(
+    135deg,
+    hsl(0 30% 12%) 0%,
+    hsl(10 25% 18%) 50%,
+    hsl(0 30% 14%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 hsl(10 30% 25% / 0.3),
+    inset 0 -1px 0 hsl(0 30% 8% / 0.5),
+    0 2px 8px hsl(10 50% 10% / 0.5);
+}
+
+/* Elf variant - teal/nature theme */
+.wc-skeleton-elf {
+  background: linear-gradient(
+    135deg,
+    hsl(170 35% 12%) 0%,
+    hsl(175 30% 18%) 50%,
+    hsl(170 35% 14%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 hsl(175 35% 25% / 0.3),
+    inset 0 -1px 0 hsl(170 35% 8% / 0.5),
+    0 2px 8px hsl(175 40% 10% / 0.5);
+}
+
+/* Human variant - blue/gold royal theme */
+.wc-skeleton-human {
+  background: linear-gradient(
+    135deg,
+    hsl(220 40% 15%) 0%,
+    hsl(225 35% 20%) 50%,
+    hsl(220 40% 17%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 hsl(225 40% 28% / 0.3),
+    inset 0 -1px 0 hsl(220 40% 10% / 0.5),
+    0 2px 8px hsl(220 50% 10% / 0.5);
+}
+
+/* Undead variant - purple/dark necromantic theme */
+.wc-skeleton-undead {
+  background: linear-gradient(
+    135deg,
+    hsl(270 25% 10%) 0%,
+    hsl(275 20% 15%) 50%,
+    hsl(270 25% 12%) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 hsl(275 25% 22% / 0.3),
+    inset 0 -1px 0 hsl(270 25% 6% / 0.5),
+    0 2px 8px hsl(270 40% 8% / 0.6);
+}
+
+/* ============================================
+   SHIMMER ANIMATIONS
+   ============================================ */
+
+@keyframes wc-shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+/* Default shimmer - gold */
+.wc-skeleton .wc-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(45 100% 50% / 0.08) 20%,
+    hsl(40 100% 60% / 0.15) 40%,
+    hsl(35 100% 55% / 0.2) 50%,
+    hsl(40 100% 60% / 0.15) 60%,
+    hsl(45 100% 50% / 0.08) 80%,
+    transparent 100%
+  );
+  animation: wc-shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Orc shimmer - fiery red-orange */
+.wc-skeleton-orc .wc-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(10 100% 50% / 0.08) 20%,
+    hsl(15 100% 60% / 0.15) 40%,
+    hsl(20 100% 55% / 0.2) 50%,
+    hsl(15 100% 60% / 0.15) 60%,
+    hsl(10 85% 50% / 0.08) 80%,
+    transparent 100%
+  );
+  animation: wc-shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Elf shimmer - moonlight silver-teal */
+.wc-skeleton-elf .wc-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(180 80% 60% / 0.08) 20%,
+    hsl(185 70% 65% / 0.15) 40%,
+    hsl(190 60% 70% / 0.2) 50%,
+    hsl(185 70% 65% / 0.15) 60%,
+    hsl(180 80% 60% / 0.08) 80%,
+    transparent 100%
+  );
+  animation: wc-shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Human shimmer - bright blue/cyan */
+.wc-skeleton-human .wc-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(200 80% 60% / 0.08) 20%,
+    hsl(210 70% 65% / 0.15) 40%,
+    hsl(220 60% 70% / 0.2) 50%,
+    hsl(210 70% 65% / 0.15) 60%,
+    hsl(200 80% 60% / 0.08) 80%,
+    transparent 100%
+  );
+  animation: wc-shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Undead shimmer - sickly purple */
+.wc-skeleton-undead .wc-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(280 70% 50% / 0.08) 20%,
+    hsl(285 60% 55% / 0.15) 40%,
+    hsl(290 50% 60% / 0.2) 50%,
+    hsl(285 60% 55% / 0.15) 60%,
+    hsl(280 70% 50% / 0.08) 80%,
+    transparent 100%
+  );
+  animation: wc-shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ============================================
+   FACTION ICON PATTERNS
+   ============================================ */
+
+@keyframes wc-icon-pulse {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
+}
+
+/* Default icons - ancient runes */
+.wc-skeleton .wc-skeleton-icons {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 5 L35 15 L30 25 L25 15 Z M10 30 L20 35 L10 40 Z M50 30 L40 35 L50 40 Z M30 35 L35 45 L30 55 L25 45 Z' fill='%23d4a853' fill-opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  animation: wc-icon-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Orc icons - crossed axes */
+.wc-skeleton-orc .wc-skeleton-icons {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23d4624a' fill-opacity='0.5'%3E%3Cpath d='M15 15 L20 10 L30 20 L40 10 L45 15 L35 25 L45 45 L40 50 L30 40 L20 50 L15 45 L25 35 Z'/%3E%3Cpath d='M45 15 L50 20 L40 30 L50 40 L45 45 L35 35 L15 45 L10 40 L20 30 L10 20 L15 15 L25 25 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 50px 50px;
+  animation: wc-icon-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Elf icons - bow and arrow */
+.wc-skeleton-elf .wc-skeleton-icons {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%235aaaa5' fill-opacity='0.5'%3E%3Cpath d='M10 30 Q15 15 25 10 Q35 5 40 15 Q45 25 40 35 Q35 45 25 50 Q15 45 10 30 M15 30 L45 30 M28 30 L50 10'/%3E%3Ccircle cx='28' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 45px 45px;
+  animation: wc-icon-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Human icons - sword and shield */
+.wc-skeleton-human .wc-skeleton-icons {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%235a8ac4' fill-opacity='0.5'%3E%3Cpath d='M20 10 L24 10 L24 35 L28 40 L28 45 L20 45 L20 40 L16 35 L16 10 L20 10 M20 12 L20 33 L22 33 L22 12 Z'/%3E%3Cpath d='M35 15 Q45 20 45 30 Q45 40 35 45 L30 40 Q37 35 37 30 Q37 25 30 20 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  animation: wc-icon-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Undead icons - skull */
+.wc-skeleton-undead .wc-skeleton-icons {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23a68ac4' fill-opacity='0.5'%3E%3Cpath d='M30 10 Q40 10 45 18 Q50 26 48 35 L42 35 Q42 38 40 40 L35 40 L35 45 L32 48 L28 48 L25 45 L25 40 L20 40 Q18 38 18 35 L12 35 Q10 26 15 18 Q20 10 30 10 M22 22 Q22 26 25 26 Q28 26 28 22 Q28 18 25 18 Q22 18 22 22 M32 22 Q32 26 35 26 Q38 26 38 22 Q38 18 35 18 Q32 18 32 22 M25 32 L28 35 L30 33 L32 35 L35 32'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 45px 45px;
+  animation: wc-icon-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}

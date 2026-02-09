@@ -89,6 +89,25 @@
           "target": "components/ui/warcraftcn/assets/card-bg.webp"
         }
       ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Warcraft Skeleton",
+      "description": "A Warcraft-themed skeleton/loading placeholder with shimmer animation",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/warcraftcn/skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/ui/warcraftcn/skeleton.tsx"
+        },
+        {
+          "path": "components/ui/warcraftcn/styles/warcraft.css",
+          "type": "registry:component",
+          "target": "components/ui/warcraftcn/styles/warcraft.css"
+        }
+      ]
     }
   ]
 }
