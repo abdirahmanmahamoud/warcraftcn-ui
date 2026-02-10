@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { XIcon, ShieldIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import "@/components/ui/warcraftcn/styles/warcraft.css";
 
@@ -14,34 +14,46 @@ const DialogClose = DialogPrimitive.Close;
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Overlay
-    ref={ref}
-    className={cn(
-      "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 overflow-hidden",
-      className
-    )}
-    {...props}
-  >
-    {/* Magical Particles */}
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          className="animate-float-particle absolute bg-amber-400/20 rounded-full blur-[1px]"
-          style={{
-            width: `${Math.random() * 4 + 2}px`,
-            height: `${Math.random() * 4 + 2}px`,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${Math.random() * 5 + 3}s`,
-          }}
-        />
-      ))}
-    </div>
-  </DialogPrimitive.Overlay>
-));
+>(({ className, ...props }, ref) => {
+  const particles = React.useMemo(() => 
+    [...Array(20)].map((_, i) => ({
+      width: `${Math.random() * 4 + 2}px`,
+      height: `${Math.random() * 4 + 2}px`,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 5}s`,
+      duration: `${Math.random() * 5 + 3}s`,
+    })), []);
+
+  return (
+    <DialogPrimitive.Overlay
+      ref={ref}
+      className={cn(
+        "fixed inset-0 z-50 bg-black/70 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 overflow-hidden",
+        className
+      )}
+      {...props}
+    >
+      {/* Magical Particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {particles.map((p, i) => (
+          <div
+            key={i}
+            className="animate-float-particle absolute bg-amber-400/20 rounded-full blur-[1px]"
+            style={{
+              width: p.width,
+              height: p.height,
+              left: p.left,
+              top: p.top,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+            }}
+          />
+        ))}
+      </div>
+    </DialogPrimitive.Overlay>
+  );
+});
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 const DialogContent = React.forwardRef<
@@ -57,6 +69,7 @@ const DialogContent = React.forwardRef<
       className={cn(
         "wc-dialog-content wc-quest-bg fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 p-10 shadow-[0_0_50px_rgba(0,0,0,0.9)] duration-200 data-[state=open]:animate-portal-in data-[state=closed]:animate-portal-out outline-none border-x-4 border-amber-900/40",
         faction === "horde" && "wc-dialog-horde",
+        faction === "alliance" && "wc-dialog-alliance",
         className
       )}
       {...props}

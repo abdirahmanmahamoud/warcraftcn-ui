@@ -66,10 +66,14 @@
 .animate-portal-out {
   animation: portal-out 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-portal-in,
+  .animate-portal-out,
+  .animate-float-particle {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .wc-dialog-content {
@@ -134,7 +138,7 @@
   position: absolute;
   inset: 4px;
   border: 2px solid rgba(251, 191, 36, 0.2);
-  border-radius: 28px;
+  border-radius: 0;
   pointer-events: none;
   z-index: 5;
 }
@@ -144,12 +148,25 @@
   filter: sepia(0.5) hue-rotate(-50deg) brightness(0.8) contrast(1.2);
 }
 
+.wc-dialog-alliance {
+  border-image-source: url("https://warcraftcn.com/warcraftcn/button-bg-with-frame.webp") !important;
+  filter: saturate(1.5) hue-rotate(10deg) brightness(0.9) contrast(1.1);
+}
+
 .wc-dialog-horde .wc-parchment {
   background-color: rgba(239, 68, 68, 0.08);
 }
 
-.wc-dialog-horde .wc-corner {
+.wc-dialog-alliance .wc-parchment {
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+.wc-dialog-horde .wc-corner-plate {
   filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.4)) brightness(0.7) sepia(0.3) saturate(2);
+}
+
+.wc-dialog-alliance .wc-corner-plate {
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.4)) brightness(1.1) saturate(1.2);
 }
 
 .wc-quest-bg {

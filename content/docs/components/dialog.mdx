@@ -40,6 +40,53 @@ import {
   </DialogContent>
 </Dialog>
 
+## Factions
+
+You can use the `faction` prop on `DialogContent` to apply faction-specific styling.
+
+### Alliance
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Alliance</Button>
+  </DialogTrigger>
+  <DialogContent faction="alliance">
+    <DialogHeader>
+      <DialogTitle>Alliance Quest</DialogTitle>
+      <DialogDescription>
+        FOR THE ALLIANCE! THIS QUEST IS THEMED FOR THE BRAVE DEFENDERS OF
+        STORMWIND.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button>Accept</Button>
+      </DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+
+### Horde
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Horde</Button>
+  </DialogTrigger>
+  <DialogContent faction="horde">
+    <DialogHeader>
+      <DialogTitle>Horde Quest</DialogTitle>
+      <DialogDescription>
+        LOK'TAR OGAR! FOR THE HORDE! VICTORY OR DEATH!
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button>Accept</Button>
+      </DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+
 ## Installation
 
 ```bash
@@ -60,26 +107,28 @@ import {
   DialogTrigger,
 } from "@/components/ui/warcraftcn/dialog";
 import { Button } from "@/components/ui/warcraftcn/button";
-<Dialog>
-  <DialogTrigger asChild>
-    <Button>Open</Button>
-  </DialogTrigger>
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle>Are you absolutely sure?</DialogTitle>
-      <DialogDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </DialogDescription>
-    </DialogHeader>
-    <DialogFooter>
-      <DialogClose asChild>
-        <Button className="brightness-75 saturate-50">Cancel</Button>
-      </DialogClose>
-      <DialogClose asChild>
-        <Button>Continue</Button>
-      </DialogClose>
-    </DialogFooter>
-  </DialogContent>
-</Dialog>;
+
+export function DialogDemo() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open</Button>
+      </DialogTrigger>
+      <DialogContent faction="horde">
+        <DialogHeader>
+          <DialogTitle>Quest Title</DialogTitle>
+          <DialogDescription>Quest details go here.</DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button className="brightness-75 saturate-50">Cancel</Button>
+          </DialogClose>
+          <DialogClose asChild>
+            <Button>Accept</Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
 ```
